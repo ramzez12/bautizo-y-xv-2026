@@ -1,0 +1,84 @@
+---
+// InvitacionDetalle.astro
+---
+
+<div class="invitacion-container relative z-10 flex flex-col items-center justify-center px-8 py-12 text-center">
+    
+    <div class="flex justify-center mb-8" id="separador-bautizo">
+        <img 
+            src="/imagenes/FlorSeparador.webp" 
+            alt="Separador" 
+            class="w-32 h-auto opacity-70"
+        />
+    </div>
+
+    <div id="texto-invitacion-bautizo" class="space-y-6">
+        <p class="text-[#333] text-base sm:text-lg font-light tracking-widest uppercase">
+            Tenemos el grato placer de invitarle a usted y familia <br/>
+            al bautizo de nuestras queridas hijas:
+        </p>
+
+        <div class="py-4">
+            <h2 id="nombres-bautizo" class="font-['Great_Vibes'] text-5xl sm:text-6xl md:text-7xl text-red-800 leading-tight">
+                Colette, Josefine <br/> y Priyanka
+            </h2>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great_Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400&display=swap');
+
+    .font-serif {
+        font-family: 'Crimson Text', serif;
+    }
+
+    /* Estilo para que el texto principal no sea totalmente negro, sino un gris muy oscuro elegante */
+    p {
+        color: #4a4a4a;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.from("#separador-bautizo", {
+            scrollTrigger: {
+                trigger: "#separador-bautizo",
+                start: "top 85%",
+            },
+            opacity: 0,
+            scale: 0.8,
+            duration: 1.2,
+            ease: "back.out(1.7)"
+        });
+
+        gsap.from("#texto-invitacion-bautizo", {
+            scrollTrigger: {
+                trigger: "#texto-invitacion-bautizo",
+                start: "top 80%",
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            ease: "power2.out"
+        });
+
+        gsap.from("#nombres-bautizo", {
+            scrollTrigger: {
+                trigger: "#nombres-bautizo",
+                start: "top 85%",
+            },
+            opacity: 0,
+            scale: 0.9,
+            duration: 1.5,
+            delay: 0.3,
+            ease: "power2.out"
+        });
+    });
+</script>

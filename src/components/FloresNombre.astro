@@ -1,0 +1,83 @@
+<section class="relative w-full overflow-hidden bg-transparent">
+    
+    <div class="absolute top-0 left-0 w-full z-20 pointer-events-none">
+        <img src="/imagenes/floresarriba2.webp" alt="Decoración floral" class="w-full h-auto object-contain" />
+    </div>
+
+    <div id="flores-izq" class="absolute left-0 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        <img src="/imagenes/FlorLateral.webp" alt="Flores izquierda" class="w-12 sm:w-32 md:w-44 lg:w-56 h-auto object-contain -ml-2 sm:ml-0" />
+    </div>
+
+    <div id="flores-der" class="absolute right-0 top-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        <img src="/imagenes/FlorLateral.webp" alt="Flores derecha" class="w-12 sm:w-32 md:w-44 lg:w-56 h-auto object-contain scale-x-[-1] -mr-2 sm:mr-0" />
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center justify-start h-full w-full px-6 pt-24 sm:pt-32 md:pt-40">
+        
+        <div class="text-center space-y-1">
+            <h1 id="nombre-Wilhen" class="font-['Great_Vibes'] text-6xl md:text-8xl text-red-800">Bautizo</h1>
+            <div id="ampersand" class="flex items-center justify-center gap-4 py-1">
+                <div class="h-[1px] w-12 bg-red-800/40"></div>
+                <span class="font-['Great_Vibes'] text-4xl text-red-700">&</span>
+                <div class="h-[1px] w-12 bg-red-800/40"></div>
+            </div>
+            <h1 id="nombre-Yoselin" class="font-['Great_Vibes'] text-6xl md:text-8xl text-red-800">15 años</h1>
+        </div>
+
+      
+
+       
+
+        <div id="oracion-texto" class="mt-12 mb-8 px-5 text-center max-w-md mx-auto">
+            <p class="font-serif  text-red-800 text-xl sm:text-xl leading-relaxed">
+                "Señor hoy nos presentamos ante ti para ser bañadas con la gracia de tu amor, 
+                toma nuestros corazones entre tus manos y nunca nos dejes."
+            </p>
+        </div>
+ <div id="fecha-boda" class="flex items-center gap-4 px-4 py-2 border-y border-red-800/20">
+            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-red-900 text-sm md:text-base tracking-[0.2em] font-light uppercase">Sábado 3 de enero</p>
+            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+        </div>
+
+        
+          <div id="separador-floral" class="flex justify-center mt-12 my-4">
+            <img src="/imagenes/FlorSeparador.webp" alt="Separador floral" class="w-32 sm:w-56 md:w-64 h-auto object-contain" />
+        </div>
+    </div>
+<!-- 
+    <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <svg class="w-6 h-6 text-red-800/40 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+    </div> -->
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great_Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400&display=swap');
+    section { background-color: transparent !important; overflow-x: hidden; }
+    .font-serif { font-family: 'Crimson Text', serif; }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        
+        tl.fromTo("#nombre-Wilhen", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "+=0.3")
+          .fromTo("#ampersand", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8 }, "-=0.8")
+          .fromTo("#nombre-Yoselin", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "-=0.8")
+          // Animación del separador
+          .fromTo("#separador-floral", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1 }, "-=0.5")
+          .fromTo("#flores-izq", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1")
+          .fromTo("#flores-der", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1.5")
+          .fromTo("#fecha-boda", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=0.5")
+          .fromTo("#oracion-texto", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5");
+    });
+</script>

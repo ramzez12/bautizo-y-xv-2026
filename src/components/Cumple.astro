@@ -1,0 +1,68 @@
+
+<!-- ============================================ -->
+<!-- InvitacionQuince.astro -->
+<!-- ============================================ -->
+
+<div class="invitacion-quince-container relative z-10 flex flex-col items-center justify-center px-8 pb-8 text-center">
+    
+    <div id="texto-quince-invitacion" class="space-y-6">
+        <p class="text-[#333] text-base sm:text-lg font-light tracking-widest uppercase">
+            Así mismo nos complace invitarle(s) el mismo día a la <br/>
+            celebración de los 15 años de nuestra querida Hija:
+        </p>
+
+        <div class="py-4">
+            <h2 id="nombre-quinceañera" class="font-['Great_Vibes'] text-5xl sm:text-6xl md:text-7xl text-red-800 leading-tight">
+                Colette Callisaya Sanches
+            </h2>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great_Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400&display=swap');
+
+    .font-serif {
+        font-family: 'Crimson Text', serif;
+    }
+
+    p {
+        color: #4a4a4a;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Animación para el bloque de invitación de 15 años
+        gsap.from("#texto-quince-invitacion", {
+            scrollTrigger: {
+                trigger: "#texto-quince-invitacion",
+                start: "top 80%",
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            ease: "power2.out"
+        });
+
+        // Animación para el nombre de la quinceañera
+        gsap.from("#nombre-quinceañera", {
+            scrollTrigger: {
+                trigger: "#nombre-quinceañera",
+                start: "top 85%",
+            },
+            opacity: 0,
+            scale: 0.9,
+            duration: 1.5,
+            delay: 0.3,
+            ease: "power2.out"
+        });
+    });
+</script>

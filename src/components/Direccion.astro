@@ -1,0 +1,223 @@
+---
+// Direccion.astro
+---
+<section class="py-2 px-4 relative">
+  <div class="max-w-xl mx-auto text-center relative">
+    
+
+      <!-- TÍTULO DIRECCIÓN -->
+    <div class="mb-2" id="titulo-direccion">
+      <h2
+        class="font-charm text-2xl md:text-3xl text-[#a27735] font-bold tracking-wide"
+      >
+        BAUTIZO
+      </h2>
+    </div>
+
+
+    <!-- 🏛️ ICONO DIRECCIÓN CON MARIPOSAS -->
+    <div class="flex justify-center items-center gap-4 md:gap-6 mb-4" id="icono-direccion">
+      
+      <!-- 🦋 MARIPOSA IZQUIERDA -->
+      <div class="mariposa-flotante flex items-center" id="mariposa-dir-izq">
+        <img
+          src="/gif/MariposaRoja.gif"
+          alt="Mariposa"
+          class="w-20 h-20 object-contain"
+        />
+      </div>
+      
+
+      <!-- ICONO CENTRAL -->
+      <img
+        src="/imagenes/iglesia.png"
+        alt="Icono de dirección"
+        class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain icono-dorado"
+      />
+
+      <!-- 🦋 MARIPOSA DERECHA -->
+      <div class="mariposa-flotante flex items-center" id="mariposa-dir-der">
+        <img
+          src="/gif/MariposaRoja.gif"
+          alt="Mariposa"
+          class="w-20 h-20 object-contain scale-x-[-1]"
+        />
+      </div>
+
+    </div>
+    
+    <!-- TÍTULO DIRECCIÓN -->
+    <div class="mb-2" id="titulo-direccion">
+      <h2
+        class="font-charm text-2xl md:text-3xl text-[#a27735] font-bold tracking-wide"
+      >
+        Dirección
+      </h2>
+    </div>
+    
+    <!-- INFORMACIÓN DE UBICACIÓN -->
+    <div class="mb-2" id="info-direccion">
+      <!-- Nombre del lugar -->
+      <h3 class="font-charm text-xl md:text-2xl text-[#a27735] font-bold mb-2">
+        Iglesia "María Auxiliadora"
+      </h3>
+      
+      <!-- Dirección -->
+      <p class="font-charm text-xl md:text-xl text-[#991B1B] leading-relaxed mb-3">
+        Sobre la plaza 24 de junio, <br />
+        Zona San Martín-D12
+      </p>
+      
+      <!-- Hora -->
+      <p class="font-charm text-xl md:text-2xl text-[#a27735] font-bold">
+        Hora: 15:00
+      </p>
+    </div>
+    
+    <!-- BOTÓN VER UBICACIÓN -->
+    <div class="flex justify-center" id="boton-ubicacion">
+      <a
+        href="Zona San Martín"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/imagenes/BotonUbicacion.webp"
+          alt="Ver ubicación en el mapa"
+          class="w-48 md:w-56 lg:w-64 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Estado inicial
+      gsap.set("#icono-direccion", { opacity: 0, scale: 0.8 });
+      gsap.set("#titulo-direccion", { opacity: 0, scale: 0.9 });
+      gsap.set("#info-direccion", { opacity: 0, scale: 0.9 });
+      gsap.set("#boton-ubicacion", { opacity: 0, scale: 0.9 });
+      gsap.set("#mariposa-dir-izq", { opacity: 0, x: -30 });
+      gsap.set("#mariposa-dir-der", { opacity: 0, x: 30 });
+
+      // ✨ ANIMACIÓN SIMULTÁNEA - TODO AL MISMO TIEMPO
+      ScrollTrigger.create({
+        trigger: "#icono-direccion",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+          
+          // TODO aparece al mismo tiempo
+          tl.to("#icono-direccion, #mariposa-dir-izq, #mariposa-dir-der, #titulo-direccion, #info-direccion, #boton-ubicacion", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          })
+          // Animaciones individuales (simultáneas)
+          .to("#icono-direccion", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.5)",
+          }, "<")
+          .to("#mariposa-dir-izq", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#mariposa-dir-der", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#titulo-direccion, #info-direccion, #boton-ubicacion", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.2)",
+          }, "<");
+
+          // 🦋 FLOTADO CONTINUO DE MARIPOSAS (después de aparecer)
+          gsap.to("#mariposa-dir-izq", {
+            y: -15,
+            x: 5,
+            rotation: 5,
+            duration: 3,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.5,
+          });
+
+          gsap.to("#mariposa-dir-der", {
+            y: -15,
+            x: -5,
+            rotation: -5,
+            duration: 3.2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.7,
+          });
+        },
+        onLeaveBack: () => {
+          // Salida simultánea
+          const tl = gsap.timeline();
+          
+          tl.to("#icono-direccion, #mariposa-dir-izq, #mariposa-dir-der, #titulo-direccion, #info-direccion, #boton-ubicacion", {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          })
+          .to("#icono-direccion", {
+            scale: 0.8,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#mariposa-dir-izq", {
+            x: -30,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#mariposa-dir-der", {
+            x: 30,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#titulo-direccion, #info-direccion, #boton-ubicacion", {
+            scale: 0.9,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<");
+        },
+      });
+
+      console.log("📍🦋 Sección de Dirección con mariposas inicializada");
+    });
+  }
+</script>
+
+<style>
+  /* Asegurar que las mariposas tengan un movimiento fluido */
+  .mariposa-flotante {
+    will-change: transform;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover en las mariposas */
+  .mariposa-flotante:hover {
+    transform: scale(1.1) !important;
+    filter: brightness(1.2);
+  }
+
+   .icono-dorado {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(12%) saturate(1486%) hue-rotate(359deg) brightness(92%) contrast(87%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+</style>

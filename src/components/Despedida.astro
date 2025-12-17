@@ -1,0 +1,255 @@
+---
+// Despedida.astro - Mensaje de los Padres
+---
+
+<section class="py-12 px-4 relative overflow-hidden">
+  <!-- Fondo sutil -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#fffaf5]/30 via-transparent to-[#fff5f5]/30 z-0"></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <!-- 🌸 FLORES SUPERIORES -->
+      <div class="flex justify-center mb-8" id="flores-arriba-despedida">
+        <img
+          src="/imagenes/FlorSeparador.webp"
+          alt="Flores decorativas"
+          class="w-32 md:w-56 lg:w-64 h-auto object-contain "
+        />
+      </div>
+
+      <!-- CARD CONTENEDOR DEL MENSAJE -->
+      <div class="relative backdrop-blur-sm bg-white/70 rounded-3xl border border-[#95303a]/20 shadow-lg p-8 md:p-10 lg:p-12" id="card-despedida">
+        
+        <!-- Brillo superior -->
+        <div class="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-t-3xl pointer-events-none"></div>
+
+        <!-- Esquinas decorativas -->
+        <div class="absolute top-2 left-2 w-12 h-12 border-t-2 border-l-2 border-[#95303a]/30"></div>
+        <div class="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2 border-[#95303a]/30"></div>
+        <div class="absolute bottom-2 left-2 w-12 h-12 border-b-2 border-l-2 border-[#95303a]/30"></div>
+        <div class="absolute bottom-2 right-2 w-12 h-12 border-b-2 border-r-2 border-[#95303a]/30"></div>
+
+        <div class="relative z-10">
+
+          <!-- MENSAJE PRINCIPAL - DESDE LA PERSPECTIVA DE LOS PADRES -->
+          <div id="mensaje-despedida">
+            <p class="font-charm text-xl md:text-xl lg:text-2xl text-[#95303a] leading-relaxed mb-6">
+              Con la bendición de Dios y el amor infinito que sentimos como padres, vivimos con <span class="text-[#95303a]">profunda emoción</span> este momento tan especial en la vida de nuestras hijas. Hoy celebramos los bautizos, donde reciben la gracia divina, y también los quince años, donde una de ellas <span class="text-[#95303a]">florece como una hermosa mujer</span>. Es un motivo de inmensa alegría que llena nuestros corazones de gratitud y esperanza. Queremos <span class="text-[#95303a]">compartir con ustedes</span> esta celebración única, rodeados del cariño de nuestra familia y amigos más queridos.
+            </p>
+
+            <!-- Línea decorativa -->
+            <div class="flex items-center justify-center gap-3 my-4" id="linea-decorativa">
+              <div class="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#95303a]"></div>
+              <svg class="w-6 h-6 text-[#95303a]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <div class="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#95303a]"></div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN CONFIRMAR ASISTENCIA -->
+          <div id="seccion-confirmar" class="mt-2">
+            
+            <!-- Texto de invitación a confirmar -->
+            <p class="font-charm text-xl md:text-xl text-[#95303a] leading-relaxed mb-2" id="texto-confirmar">
+              Su presencia es un regalo invaluable para nuestra familia. Por favor, <span class="text-[#95303a]">confirmen su asistencia</span> para celebrar juntos este día tan significativo.
+            </p>
+
+            <!-- TEXTO DE CONFIRMAR ASISTENCIA -->
+            <p class="font-charm pt-10 text-xl md:text-3xl lg:text-4xl text-[#95303a] font-bold mb-8" id="mensaje-confirmar">
+              Por favor, haz clic para confirmar asistencia
+            </p>
+
+            <!-- BOTÓN CONFIRMAR ASISTENCIA -->
+            <div class="flex justify-center" id="boton-confirmar">
+              <a
+                href="https://wa.me/59171541175?text=Me%20complace%20confirmar%20mi%20asistencia%20al%20bautizo%20de%20Colette%2C%20Josefine%20y%20Priyanka%2C%20y%20a%20los%20XV%20a%C3%B1os%20de%20Colette%20Callisaya%20Sanches.%20Nos%20vemos%20el%20s%C3%A1bado%203%20de%20enero.%20%C2%A1Estar%C3%A9%20sin%20falta!"
+
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Confirmar asistencia por WhatsApp"
+                title="Confirmar asistencia por WhatsApp"
+              >
+                <img
+                  src="/imagenes/ConfirmarAsistencia.webp"
+                  alt="Confirmar Asistencia"
+                  class="w-56 md:w-64 lg:w-72 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+                />
+              </a>
+            </div>
+
+            <!-- MENSAJE FINAL -->
+            <p class="font-charm pt-10 text-2xl md:text-3xl lg:text-4xl text-[#95303a] font-bold mb-8" id="mensaje-final">
+              ¡Los esperamos con los brazos abiertos!
+            </p>
+
+            <!-- FIRMA DE LOS PADRES -->
+            <!-- <p class="font-charm text-lg md:text-xl text-[#a27735] italic mt-6" id="firma-padres">
+              Con amor,<br/>Los padres
+            </p> -->
+          </div>
+
+        </div>
+
+        <!-- Resplandor del card -->
+        <div class="absolute -inset-1 bg-gradient-to-br from-[#95303a]/5 via-transparent to-[#c9a55e]/5 rounded-3xl blur-xl -z-10"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("💌 Iniciando sección de despedida...");
+
+      // 🎯 ESTADO INICIAL
+      gsap.set("#flores-arriba-despedida", { opacity: 0, y: -30, scale: 0.8 });
+      gsap.set("#card-despedida", { opacity: 0, y: 40, scale: 0.95 });
+      gsap.set("#mensaje-despedida", { opacity: 0, y: 30, filter: "blur(5px)" });
+      gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
+      gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+      gsap.set("#mensaje-confirmar", { opacity: 0, scale: 0.9, y: 20 });
+      gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
+      gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
+      gsap.set("#firma-padres", { opacity: 0, y: 20 });
+
+      // ✨ ANIMACIÓN SIMULTÁNEA Y ELEGANTE
+      ScrollTrigger.create({
+        trigger: "#flores-arriba-despedida",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+
+          // Todos los elementos aparecen al mismo tiempo
+          tl.to("#flores-arriba-despedida", {
+            opacity: 0.8,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.5)",
+          })
+          .to("#card-despedida", {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power3.out",
+          }, 0)
+          .to("#mensaje-despedida", {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.8,
+            ease: "power2.out",
+          }, 0)
+          .to("#linea-decorativa", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.5)",
+          }, 0)
+          .to("#texto-confirmar", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          }, 0)
+          .to("#mensaje-confirmar", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "back.out(1.5)",
+          }, 0)
+          .to("#boton-confirmar", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "back.out(1.5)",
+          }, 0)
+          .to("#mensaje-final", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.5)",
+          }, 0)
+          .to("#firma-padres", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          }, 0);
+
+          // 🌸 ANIMACIONES CONTINUAS
+          gsap.to("#linea-decorativa svg", {
+            scale: 1.2,
+            duration: 1.5,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.8,
+          });
+
+          gsap.to("#boton-confirmar img", {
+            scale: 1.05,
+            y: -3,
+            duration: 2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.8,
+          });
+
+          gsap.to("#mensaje-final", {
+            textShadow: "0 0 15px rgba(162, 119, 53, 0.4)",
+            duration: 2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.8,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.set("#flores-arriba-despedida", { opacity: 0, y: -30, scale: 0.8 });
+          gsap.set("#card-despedida", { opacity: 0, y: 40, scale: 0.95 });
+          gsap.set("#mensaje-despedida", { opacity: 0, y: 30, filter: "blur(5px)" });
+          gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
+          gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+          gsap.set("#mensaje-confirmar", { opacity: 0, scale: 0.9, y: 20 });
+          gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
+          gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
+          gsap.set("#firma-padres", { opacity: 0, y: 20 });
+        },
+      });
+
+      console.log("💌✨ ¡Sección de despedida activada!");
+    });
+  }
+</script>
+
+<style>
+  #card-despedida:hover {
+    box-shadow: 0 20px 40px rgba(162, 119, 53, 0.15);
+    transition: box-shadow 0.5s ease;
+  }
+
+  #mensaje-despedida span {
+    transition: all 0.3s ease;
+  }
+
+  #mensaje-despedida span:hover {
+    color: #c9a55e;
+    text-shadow: 0 0 10px rgba(162, 119, 53, 0.3);
+  }
+</style>

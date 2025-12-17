@@ -1,0 +1,110 @@
+<section class="relative w-full h-screen overflow-hidden bg-transparent">
+    
+    <div id="reproductor-fijo" class="fixed top-6 right-6 z-50">
+        <button 
+            id="btn-reproducir"
+            class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center border border-red-800/30 transition-all hover:scale-110 active:scale-95 bg-white/10 backdrop-blur-sm"
+            title="Reproducir/Pausar música"
+        >
+            <svg id="icono-play" class="hidden w-6 h-6 text-red-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            
+            <svg id="icono-pause" class="w-6 h-6 text-red-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+            </svg>
+        </button>
+    </div>
+
+    <audio id="audio-player" preload="auto" loop>
+        <source src="/audio/melodia.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="absolute top-0 left-0 w-full z-20 pointer-events-none">
+        <img
+            src="/imagenes/FloresArriba.webp"
+            alt="Decoración floral"
+            class="w-full h-auto object-contain"
+        />
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center h-full w-full px-6">
+        
+        <div class="text-center space-y-2 mt-20 md:mt-32">
+            <h1 id="nombre-Wilhen" class="font-['Great_Vibes'] text-6xl md:text-8xl text-red-800">
+                Bautizo
+            </h1>
+            
+            <div id="ampersand" class="flex items-center justify-center gap-4 py-2">
+                <div class="h-[1px] w-12 bg-red-800/40"></div>
+                <span class="font-['Great_Vibes'] text-4xl text-red-700">&</span>
+                <div class="h-[1px] w-12 bg-red-800/40"></div>
+            </div>
+            
+            <h1 id="nombre-Yoselin" class="font-['Great_Vibes'] text-6xl md:text-8xl text-red-800">
+                15 años
+            </h1>
+        </div>
+
+        <div id="fecha-boda" class="mt-12 flex items-center gap-4 px-2 py-2 border-y border-red-800/20">
+            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            
+            <p class="text-red-900 text-sm tracking-[0.2em] font-light uppercase">
+                Sábado 3 de enero
+            </p>
+
+            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <svg class="w-6 h-6 text-red-800/40 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+    </div>
+
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    
+    /* Aseguramos que nada tenga fondo forzado */
+    section {
+        background-color: transparent !important;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const btnReproducir = document.getElementById('btn-reproducir');
+        const audioPlayer = document.getElementById('audio-player');
+        const iconoPlay = document.getElementById('icono-play');
+        const iconoPause = document.getElementById('icono-pause');
+        let isPlaying = false;
+
+        btnReproducir.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                iconoPlay.classList.remove('hidden');
+                iconoPause.classList.add('hidden');
+            } else {
+                audioPlayer.play().catch(e => console.log("Interacción necesaria"));
+                iconoPlay.classList.add('hidden');
+                iconoPause.classList.remove('hidden');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        tl.fromTo("#nombre-Wilhen", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "+=0.3")
+          .fromTo("#ampersand", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8 }, "-=0.8")
+          .fromTo("#nombre-Yoselin", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "-=0.8")
+          .fromTo("#fecha-boda", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=0.5");
+    });
+</script>
