@@ -24,37 +24,28 @@
             <h1 id="nombre-Yoselin" class="font-['Great_Vibes'] text-6xl md:text-8xl text-red-800">15 años</h1>
         </div>
 
-      
-
-       
-
         <div id="oracion-texto" class="mt-12 mb-8 px-5 text-center max-w-md mx-auto">
-            <p class="font-serif  text-red-800 text-xl sm:text-xl leading-relaxed">
+            <p class="font-serif text-red-800 text-xl sm:text-xl leading-relaxed">
                 "Señor hoy nos presentamos ante ti para ser bañadas con la gracia de tu amor, 
                 toma nuestros corazones entre tus manos y nunca nos dejes."
             </p>
         </div>
- <div id="fecha-boda" class="flex items-center gap-4 px-4 py-2 border-y border-red-800/20">
-            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <p class="text-red-900 text-sm md:text-base tracking-[0.2em] font-light uppercase">Sábado 3 de enero</p>
-            <svg class="w-5 h-5 text-red-800/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+
+        <!-- NOMBRES DE LOS PADRES CENTRADOS -->
+        <div id="nombres-padres" class="space-y-5 text-center">
+            <p class="font-['Great_Vibes'] text-3xl md:text-5xl text-[#991B1B]">
+                Wilfredo Callisaya Quispe
+            </p>
+            <p class="font-['Great_Vibes'] text-3xl md:text-5xl text-[#991B1B]">
+                Nelbi Sanches Garcia
+            </p>
         </div>
 
-        
-          <div id="separador-floral" class="flex justify-center mt-12 my-4">
+        <div id="separador-floral" class="flex justify-center mt-12 my-4">
             <img src="/imagenes/FlorSeparador.webp" alt="Separador floral" class="w-32 sm:w-56 md:w-64 h-auto object-contain" />
         </div>
     </div>
-<!-- 
-    <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-        <svg class="w-6 h-6 text-red-800/40 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-    </div> -->
+
 </section>
 
 <style>
@@ -70,14 +61,38 @@
     document.addEventListener("DOMContentLoaded", () => {
         const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
         
-        tl.fromTo("#nombre-Wilhen", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "+=0.3")
-          .fromTo("#ampersand", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.8 }, "-=0.8")
-          .fromTo("#nombre-Yoselin", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.2 }, "-=0.8")
-          // Animación del separador
-          .fromTo("#separador-floral", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1 }, "-=0.5")
-          .fromTo("#flores-izq", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1")
-          .fromTo("#flores-der", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1.5")
-          .fromTo("#fecha-boda", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=0.5")
-          .fromTo("#oracion-texto", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5");
+        // TODAS LAS ANIMACIONES AL MISMO TIEMPO (usando el parámetro "0" o "<")
+        tl.fromTo("#nombre-Wilhen", 
+            { opacity: 0, y: 30 }, 
+            { opacity: 1, y: 0, duration: 1.2 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#ampersand", 
+            { opacity: 0, scale: 0.8 }, 
+            { opacity: 1, scale: 1, duration: 0.8 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#nombre-Yoselin", 
+            { opacity: 0, y: 30 }, 
+            { opacity: 1, y: 0, duration: 1.2 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#oracion-texto", 
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 1 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#nombres-padres", 
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 1 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#separador-floral", 
+            { opacity: 0, scale: 0.5 }, 
+            { opacity: 1, scale: 1, duration: 1 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#flores-izq", 
+            { opacity: 0, x: -60 }, 
+            { opacity: 1, x: 0, duration: 1.5 }, 
+            0) // Inicia en el tiempo 0
+          .fromTo("#flores-der", 
+            { opacity: 0, x: 60 }, 
+            { opacity: 1, x: 0, duration: 1.5 }, 
+            0); // Inicia en el tiempo 0
     });
 </script>
