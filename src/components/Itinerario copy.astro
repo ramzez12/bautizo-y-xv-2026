@@ -2,7 +2,7 @@
 // Itinerario.astro - Quinceañera
 ---
 
-<section class="px-4 relative overflow-hidden py-4">
+<section class="px-4 relative overflow-hidden py-16">
   <div class="max-w-5xl mx-auto relative z-10">
 
     <div class="max-w-3xl mx-auto relative">
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div class="relative md:px-8">
+      <div class="relative px-4 md:px-8">
         
         <!-- 🌸 FLORES LATERALES IZQUIERDA -->
         <div class="absolute -left-4 md:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 w-10 md:w-24 lg:w-28 pointer-events-none z-0 flor-lateral-izq opacity-0">
@@ -37,7 +37,7 @@
         <div class="space-y-0" id="eventos-container">
 
           <!-- EVENTO 1: Bautizo -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -45,7 +45,7 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq">
               <div class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
                 <img src="/imagenes/iglesia.png" alt="Bautizo" class="w-full h-full object-contain icono-dorado" />
@@ -53,13 +53,14 @@
             </div>
             <div class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-der">
               <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] leading-tight">Bautizo</p>
-              <p class="font-charm text-xl md:text-xl text-[#8b6a2e] font-bold mt-0.5">(Iglesia de San Martín)</p>
+              <p class="font-charm text-xl md:text-xl text-[#8b6a2e] font-bold  mt-0.5">(Iglesia de San Martín)</p>
               <p class="font-charm text-xl md:text-xl text-[#991B1B] mt-0.5">15:00</p>
+              <!-- <p class="font-charm text-xl md:text-xs text-[#8b6a2e] mt-0.5">(Iglesia de San Martín)</p> -->
             </div>
           </div>
 
           <!-- EVENTO 2: Ingreso de invitados -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -67,11 +68,12 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] leading-tight">Ingreso de invitados e inicio de la fiesta</p>
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] font-bold leading-tight">Navegantes Orquesta (La Paz)</p>
+              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735]  leading-tight">Ingreso de invitados e inicio de la fiesta </p>
+              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] font-bold leading-tight">  Navegantes Orquesta (La Paz)</p>
               <p class="font-charm text-xl md:text-xl text-[#991B1B] mt-0.5">16:00</p>
+              <!-- <p class="font-charm text-xl md:text-xl text-[#8b6a2e] mt-0.5">Navegantes Orquesta (La Paz)</p> -->
             </div>
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der">
               <div class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
@@ -81,7 +83,7 @@
           </div>
 
           <!-- EVENTO 3: Acto Bautizo -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -89,7 +91,7 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq">
               <div class="w-16 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
                 <img src="/imagenes/bautismo.png" alt="Acto Bautizo" class="w-16 h-full object-contain icono-dorado" />
@@ -102,7 +104,7 @@
           </div>
 
           <!-- EVENTO 4: Acto 15 Años -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -110,7 +112,7 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq">
               <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] leading-tight">Acto 15 Años</p>
               <p class="font-charm text-xl md:text-xl text-[#991B1B] mt-0.5">20:30</p>
@@ -123,7 +125,7 @@
           </div>
 
           <!-- EVENTO 5: Cena / Torta -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -131,7 +133,7 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq">
               <div class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
                 <img src="/imagenes/cena.png" alt="Cena" class="w-full h-full object-contain icono-dorado" />
@@ -144,7 +146,7 @@
           </div>
 
           <!-- EVENTO 6: Show Folklórico -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -152,11 +154,12 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] font-bold leading-tight">Show Folklórico</p>
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] leading-tight">Los Llajuas (Oruro)</p>
+              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] font-bold leading-tight">Show Folklórico </p>
+              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735]  leading-tight">  Los Llajuas (Oruro) </p>
               <p class="font-charm text-xl md:text-xl text-[#991B1B] mt-0.5">21:30</p>
+              <!-- <p class="font-charm text-xs md:text-xs text-[#8b6a2e] mt-0.5">Los Lajitas (Oruro)</p> -->
             </div>
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der">
               <div class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
@@ -166,7 +169,7 @@
           </div>
 
           <!-- EVENTO 7: Fin de la fiesta -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -174,20 +177,20 @@
             </div>
           </div>
 
-          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 min-h-[140px] md:min-h-[120px] opacity-0">
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1 opacity-0">
             <div class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq">
               <div class="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
                 <img src="/imagenes/horaloca.png" alt="Fin de la fiesta" class="w-full h-full object-contain icono-dorado" />
               </div>
             </div>
             <div class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-der">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] leading-tight">Fin de la fiesta</p>
+              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#a27735] 
               <p class="font-charm text-xl md:text-xl text-[#991B1B] mt-0.5">00:30</p>
             </div>
           </div>
 
           <!-- Corazón final -->
-          <div class="flex justify-center py-3">
+          <div class="flex justify-center py-1">
             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#a27735] to-[#8b6a2e] flex items-center justify-center relative z-10 corazon-item shadow-md opacity-0">
               <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
